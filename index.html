@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>reCAPTCHA demo: Simple page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://www.recaptcha.net/recaptcha/api.js" async defer></script>
+</head>
+
+<body>
+  <h1>reCAPTCHA demo: Simple page</h1>
+  <form>
+    First name:<br>
+    <input type="text" name="firstname" value="Mickey">
+    <br>
+    Last name:<br>
+    <input type="text" name="lastname" value="Mouse">
+    <br><br>
+    <div class="g-recaptcha" data-sitekey="6LcPSbUUAAAAAL-iZnu_y5cE4cy05abT27VujN_J" data-callback="recaptcha_callback"></div>
+    <input type="button" value="Send" style="margin-top: 15px;" id="send-button" disabled>
+  </form>
+  <script>
+    function recaptcha_callback() {
+      var sendBtn = document.getElementById("send-button");
+      sendBtn.removeAttribute("disabled");
+    }
+  </script>
+</body>
+</html>
